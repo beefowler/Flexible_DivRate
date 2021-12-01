@@ -31,7 +31,7 @@
 
 
 
-function [modelresults, modelfits, allstarts, simPROPS, simCONC, Einterp] = OneDayMultiStart(day, Einterp, volbins, COUNTS, hr2, ts)
+function [modelresults, modelfits, allstarts, simPROPS, simCONC, Einterp] = OneDayMultiStart(day, Einterp, volbins, COUNTS, hr2, ts, informedguess)
 
     
 hr1 = 1; %choose start hour for model fitting
@@ -67,6 +67,10 @@ for i = 1:14
 end
 clear i
 x2(:,9) = 1/(2*num_starts)*(1:num_starts); %disperse Theta(9) evenly between 0 and .5, rather than randomly 
+
+if exist('informedguess')
+    x2(1,:) = informedguess; 
+end
 tpoints = CustomStartPointSet(x2); 
 
 

@@ -81,6 +81,8 @@ for t=1:(1/dt)
      elseif split_ts %if ts is split across 24hr mark, then no hours will be <ts_2 and > ts_1 (e.g. <3 and > 21) 
          if hr < ts_2 || hr >= ts_1 %instead limit division after hr = ts_1 and before hr = ts_2
             delta = zeros(1,m);
+         else
+             delta=del;
          end
      else
      delta=del; %allow division 
