@@ -39,7 +39,7 @@ hr1 = 1; %choose start hour for model fitting
 %% Fit Model to Data
 
 ms=MultiStart('Display','off','TolX',1e-5,'UseParallel','always','StartPointsToRun','bounds-ineqs');
-opts=optimset('Display','off','TolX',1e-8,'Algorithm','interior-point','UseParallel','always','MaxIter', 3000,'MaxFunEvals',10000);
+opts=optimset('Display','off','TolX',1e-8,'Algorithm','interior-point','UseParallel',false,'MaxIter', 3000,'MaxFunEvals',10000);
 icsTol=0.2;
 tolvec=[0.01 0.01 100 0.005 0.01 0.01 100 0.005 0.01 0.5 0.5 0.5 0.5 10];
 
