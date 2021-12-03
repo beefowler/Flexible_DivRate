@@ -37,7 +37,7 @@ while i <= length(filelist)
        
         day = floor(datenum(daystarttime)); 
         
-        if exist([filelist(i).folder filesep filelist(i-1).name(1:end-9) 'output.mat']) %get previous result if available
+        if i > 1 && exist([filelist(i).folder filesep filelist(i-1).name(1:end-9) 'output.mat']) %get previous result if available
           load([filelist(i).folder filesep filelist(i-1).name(1:end-9) 'output.mat'], 'modelresults')
          informedguess = modelresults(2:15); 
          clear modelresults
