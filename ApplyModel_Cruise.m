@@ -41,9 +41,9 @@ while i <= length(filelist)
           load([filelist(i).folder filesep filelist(i-1).name(1:end-9) 'output.mat'], 'modelresults')
          informedguess = modelresults(2:15); 
          clear modelresults
-            [modelresults, modelfits, allstarts, simPROPS, simCONC] = OneDayMultiStart(day, Einterp, synvolbins, N_dist, 24, ts, informedguess);     
+            [modelresults, modelfits, allstarts, simPROPS, simCONC] = OneDayFastStart2(day, Einterp, synvolbins, N_dist, 24, ts, informedguess);     
         else
-            [modelresults, modelfits, allstarts, simPROPS, simCONC] = OneDayMultiStart(day, Einterp, synvolbins, N_dist, 24, ts);     
+            [modelresults, modelfits, allstarts, simPROPS, simCONC] = OneDayFastStart2(day, Einterp, synvolbins, N_dist, 24, ts);     
         end
                   
         %save results
