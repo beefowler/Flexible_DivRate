@@ -74,6 +74,7 @@ clear i
 x2(:,9) = 1/(2*num_starts)*(1:num_starts); %disperse Theta(9) evenly between 0 and .5, rather than randomly 
 
 if exist('informedguess')
+   informedguess(9) = min(informedguess(9), 1-informedguess(9)); 
     x2(1,:) = informedguess; 
 end
 tpoints = CustomStartPointSet(x2); 
